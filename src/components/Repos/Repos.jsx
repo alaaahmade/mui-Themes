@@ -1,33 +1,27 @@
-import React, { Component, useEffect, useState } from 'react'
-import ReposDiv from './ReposDiv'
-// import './repos.css' 
+/* eslint-disable react/prop-types */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable no-shadow */
+import React, { useEffect, useState } from 'react';
+import ReposDiv from './ReposDiv';
+// import './repos.css'
 import Loading from '../Loading/Loading';
 
+function Repos({ searchInput }) {
+  const [data, setData] = useState(null);
 
-class Repos extends Component {
-  state = {
-    data: null
-  }
-  setData = (e) => {
-    this.setState(() => ({data: e}))
-  }
-  getData = () => {
-    fetch(`https://api.codetabs.com/v1/proxy/?quest=https://www.freetogame.com/api/games`)
+  const getData = () => {
+    fetch('https://api.codetabs.com/v1/proxy/?quest=https://www.freetogame.com/api/games')
       .then((data) => data.json())
-      .then((data => this.setData(data)))
-      };
-  componentDidMount(){
-    this.getData()
-  }
+      .then(((data) => setData(data)));
+  };
 
-  render(){
-    const { searchInput } = this.props;
-    const { data } = this.state;
-    const filteredData = data?.filter((game) => game.title.toLowerCase().includes(searchInput.toLowerCase()))
+  const filteredData = data?.filter((game) =>
+    game.title.toLowerCase().includes(searchInput.toLowerCase()));
+  useEffect(() => {
+    getData();
+  }, []);
 
-    return <ReposDiv data={filteredData}/> || <Loading/>;
-  }
+  return <ReposDiv data={filteredData} /> || <Loading />;
+}
 
-} 
-
-export default Repos
+export default Repos;

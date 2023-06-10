@@ -1,18 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-
-
-class Loading extends Component{
-  render(){
-    return (
-          <div className="load2">
-            <div className="one"></div>
-            <div className="two"></div>
-            <div className="three"></div>
-          </div>
-        )
-  }
+function Loading() {
+  return (
+    <div className="load2">
+      <div className="one" />
+      <div className="two" />
+      <div className="three" />
+    </div>
+  );
 }
 
-
-export default Loading
+export default Loading;
