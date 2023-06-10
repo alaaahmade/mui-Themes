@@ -34,7 +34,7 @@ function Nav({ setTitle, title, setModeState }) {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder="Username"
+        placeholder="Search"
       />
       <FormControlLabel
         sx={{
