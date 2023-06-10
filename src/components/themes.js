@@ -1,15 +1,16 @@
 import { createTheme } from '@mui/material';
+
 export const darkTheme = createTheme({
-  palette:{
+  palette: {
     primary: {
-      main:'#0D1117',
+      main: '#0D1117',
       second: '#161B22',
       border: '#979797',
-      contrastText: '#fff'
-    }
-    
+      contrastText: '#fff',
+    },
+
   },
-  spacing : 4,
+  spacing: 4,
 
   components: {
     MuiLink: {
@@ -26,30 +27,30 @@ export const darkTheme = createTheme({
       ],
 
     },
-    MuiTypography:{
-      variants:[
+    MuiTypography: {
+      variants: [
         {
-          props: {variant: 'myDescription'},
+          props: { variant: 'myDescription' },
           style: {
             padding: '10px',
-          }
-        }
-      ]
+          },
+        },
+      ],
     },
   },
-})
+});
 
 export const lightTheme = createTheme({
-  palette:{
+  palette: {
     primary: {
-      main:'#fff',
+      main: '#fff',
       second: '#D0D0D0',
       border: '#0D1117',
-      contrastText: '#000'
-    }
-    
+      contrastText: '#000',
+    },
+
   },
-  spacing : 4,
+  spacing: 4,
 
   components: {
     MuiLink: {
@@ -66,15 +67,15 @@ export const lightTheme = createTheme({
       ],
 
     },
-    MuiTypography:{
-      variants:[
+    MuiTypography: {
+      variants: [
         {
-          props: {variant: 'myDescription'},
+          props: { variant: 'myDescription' },
           style: {
             padding: '10px',
-          }
-        }
-      ]
+          },
+        },
+      ],
     },
   },
-})
+});
